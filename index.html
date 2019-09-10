@@ -6,5 +6,31 @@
 </head>
 <body>
 test
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  function ajaxRequst(url, type, params) {
+    return new Promise((res) => {
+      let xhr = new XMLHttpRequest()
+      xhr.open(type, url, true)
+      xhr.setRequestHeader("Content-type", "application/json;charset=utf-8")
+      xhr.send(JSON.stringify(params))
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let result = xhr.responseText
+          result = eval('(' + result + ')')
+          res(result)
+        }
+      }
+    })
+  }
+  axios.post('/api/test',{
+    type:1
+  }).then((res)=>{
+    console.log(res)
+  })
+  // ajaxRequst('/api/test', 'post', {type: 1}).then((res) => {
+  //     console.log(res)
+  // })
+</script>
 </body>
 </html>
