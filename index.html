@@ -28,9 +28,9 @@ test
   }).then((res)=>{
     console.log(res)
   })
-  // ajaxRequst('/api/test', 'post', {type: 1}).then((res) => {
-  //     console.log(res)
-  // })
+  ajaxRequst('../db.json', 'get', {type: 1}).then((res) => {
+      console.log(res)
+  })
 </script>
 </body>
 </html>
