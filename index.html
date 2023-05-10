@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>test</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="baidu-site-verification" content=""/>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <title>猴赛雷的神秘祝福 让你猴年行大运</title>
+  <link rel="stylesheet" href="css/main.css"/>
 </head>
-<body>
-test
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-  function ajaxRequst(url, type, params) {
-    return new Promise((res) => {
-      let xhr = new XMLHttpRequest()
-      xhr.open(type, url, true)
-      xhr.setRequestHeader("Content-type", "application/json;charset=utf-8")
-      xhr.send(JSON.stringify(params))
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          let result = xhr.responseText
-          result = eval('(' + result + ')')
-          res(result)
-        }
-      }
-    })
-  }
-  axios.post('/api/test',{
-    type:1
-  }).then((res)=>{
-    console.log(res)
-  })
-  // ajaxRequst('/api/test', 'post', {type: 1}).then((res) => {
-  //     console.log(res)
-  // })
-</script>
-</body>
-</html>
+<body onload="showPage()">
+<img src="img/first.jpg" alt="" style="opacity: 0;position: absolute;z-index: 0;"/>
+<div id="divPageLoading">
+  <img src="img/bee.gif"/>
+</div>
+ <!--音频-->
+<audio autoplay controls loop style="display: none; opacity: 0;">
+  <!--不好意思,你的浏览器不支持视频.-->
+  <source src="happy.mp3"></source>
+</audio>
+<div class="wrap" style="display: none;">
+  <!--背景图-->
+  <ul id="background">
+    <li class="bg_01">
+    </li>
+    <li class="bg_02">
+      <!--蜂窝-->
+      <div class="fengwo"></div>
+
+      <!--视线-->
+      <div class="ear"></div>
+      <!--fengmi-->
+      <div class="fengmi"></div>
+
+    </li>
+    <li class="bg_03">
+      <img src="img/kongbai.png" style="z-index: 200000000;width:100%;height:100%;" alt=""/>
+      <!--羊-->
+      <div class="sheep"></div>
+      <!--光晕-->
+      <div class="guang"></div>
+      <!--包-->
+      <div class="red"></div>
+    </li>
+  </ul>
+  <!--云-->
+  <div class="cload1"></div>
+  <div class="cload2"></div>
+  <!--猴子-->
+  <div class="monkey"></div>
+  <!--太阳-->
+  <div class="sun"></div>
+  <!--眼泪-->
+  <div class="yanlei"></div>
+  <div class="mifeng"></div>
+
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<!--<script src="js/zepto.min.js"></script>-->
+<script src="js/rem.js"></script>
+<script src="js/man.js"></script>
+<script src="js/snowfall.jquery.js"></script>
